@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :questions do
-    resources :answers, only: [:new, :create] do
-      resources :tasks, only: [:new, :create]
+      resources :answers, only: [:new, :create] do
+        resources :tasks, only: [:index, :new, :create]
       end
       end
   devise_for :users

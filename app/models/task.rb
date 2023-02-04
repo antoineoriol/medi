@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  belongs_to :answers
+  belongs_to :answer
 end
