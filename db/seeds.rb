@@ -21,5 +21,3 @@ puts "Answer created"
 
 task1 = Task.create!(answer_id: answer1.id)
 puts "Task created"
-
-
