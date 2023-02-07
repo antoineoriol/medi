@@ -9,17 +9,33 @@
 # cleaning DB
 puts 'cleaning database'
 Answer.destroy_all
+Question.destroy_all
+User.destroy_all
 puts 'database cleaned'
 
 # creating users
-puts 'creating user'
-user1 = User.create(email: 'etest2@test.com', password: 'azerty')
-puts 'creating question'
-question1 = Question.create(user: user1, content: "Qui es-tu ?")
-puts 'question created'
 
-# creating answer
-answer = Answer.new
-answer.content = "Hello world"
-answer.question_id = question1.id
-answer.save!
+user = User.create!(email: "antoine@gmail.com", password: "123456789")
+
+question_sets = [
+  {
+    content: "mal de gorge, fièvre et fatigue"
+  }, {
+    content: "mal à la tête, vomissement"
+  }, {
+    content: "mal à la jambe, éternuements"
+  }]
+
+question_sets.each do |question|
+  question_list = []
+  question_1 = Question.create!(content: question[:content], user: user)
+  question_1 >> question_list
+  question_list.each do |answer|
+    answer_list = []
+    answer_1 = Answer.create!(question_id: question[:id], content: "blabla")
+    answer_1 >> answer_list
+  end
+end
+
+puts question_list
+puts answer_list
