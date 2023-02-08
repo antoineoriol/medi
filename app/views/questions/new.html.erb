@@ -1,6 +1,6 @@
 <h1>Questions#new</h1>
 
 <%= simple_form_for @question do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "envoye"%>
+  <%= f.input :content, required: true, placeholder: "Decrivez moi votre mal" %>
+  <%= f.button :submit, "envoyer"%>
 <% end %>
