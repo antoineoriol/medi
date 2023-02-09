@@ -1,3 +1,11 @@
-<h1>Une nouvelle réponse est arrivée</h1>
-<p>Question : <%= @answer.question.content %></p>
-<p>Réponse : <%= @answer.question_id %></p>
+<div class="container p-4">
+  <h1 class="fw-bolder">🔔 Une nouvelle réponse est arrivée</h1>
+  <div class="">
+    <p class="fs-3 text ">Question :</p>
+    <p class ="fw-semibold">👉🏻 <%= @answer.question.content %></p>
+    </div>
+  <div>
+    <p class="fs-3 text">Réponse :</p>
+    <p class="fw-semibold">👉🏻 <%= @answer.content %></p>
+  </div>
+</div>
