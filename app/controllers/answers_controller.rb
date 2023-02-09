@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(question_id: @question.id, content: params[:answer][:content])
     if @answer.save
-      redirect_to question_answer_path(@question, @answer)
+      redirect_to new_question_answer_task_path(@question, @answer)
     else
       render :new
     end
