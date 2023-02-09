@@ -1,2 +1,13 @@
-<h1>Answers#new</h1>
-<p>Find me in app/views/answers/new.html.erb</p>
+<div class="container p-4">
+<h1 class="fw-bold">Poster une réponse</h1>
+  <div class="row">
+    <%= simple_form_for [@question, @answer] do |f| %>
+      <div class="col-md-auto fst-italic">
+        <%= f.input :content, label: 'Saisir la réponse :', placeholder: "Bois de l'eau, dans 20 ans il n'y en aura plus"%>
+      </div>
+      <div class="col mt-5">
+        <%= f.submit "Poster une réponse", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+  </div>
+</div>

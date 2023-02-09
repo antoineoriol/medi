@@ -1,6 +1,13 @@
-<h1>Questions#new</h1>
-
-<%= simple_form_for @question do |f| %>
-  <%= f.input :content, required: true, placeholder: "Decrivez moi votre mal" %>
-  <%= f.button :submit, "envoyer"%>
-<% end %>
+<div class="container p-4">
+<h1 class="fw-bold">Poser une question</h1>
+  <div class="row">
+    <%= simple_form_for @question do |f| %>
+      <div class="col-md-auto fst-italic">
+        <%= f.input :content, label: 'Saisir votre question :', placeholder: "J'ai mal au pied" %>
+      </div>
+      <div class="col mt-5">
+        <%= f.submit "Poster une question", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+  </div>
+</div>
