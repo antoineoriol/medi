@@ -2,11 +2,20 @@ class AnswersController < ApplicationController
   before_action :set_question, only: %i[create new]
   before_action :set_answer, only: %i[show]
 
+  # def create
+  #   @answer = Answer.new(answer_params)
+  #   @answer.questions_id = @question.id
+  #   if @answer.save
+  #     redirect_to question_answer_tasks
+  #   else
+  #     render :new
+  #   end
+  # end
+
   def create
-    @answer = Answer.new(answer_params)
-    @answer.questions_id = @question.id
+    @answer = Answer.new(question_id: @question.id)
     if @answer.save
-      redirect_to question_answer_tasks
+      redirect_to question_answer_path(@question, @answer)
     else
       render :new
     end
@@ -22,7 +31,7 @@ class AnswersController < ApplicationController
   private
 
   def set_answer
-    @answer = Answer.find_by(question: params[:question_id])
+    @answer = Answer.find_by(question_id: params[:question_id])
   end
 
   def set_question
