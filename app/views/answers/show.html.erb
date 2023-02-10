@@ -3,9 +3,16 @@
   <div class="">
     <p class="fs-3 text ">Question :</p>
     <p class ="fw-semibold">👉🏻 <%= @answer.question.content %></p>
-    </div>
+  </div>
   <div>
     <p class="fs-3 text">Réponse :</p>
-    <p class="fw-semibold">👉🏻 <%= @answer.content %></p>
+    <%# <p class="fw-semibold">👉🏻 <%= @answer.content %></p>
+    <div class="card container border-primary mb-3" style="width: 18rem; height: 10rem;">
+      <div class="card-hearder row justify-content-between text-white bg-primary">
+        <h5>1er Tache a faire</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">👉🏻 <%= @answer.content %> </p>
+    </div>
   </div>
 </div>
