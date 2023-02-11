@@ -1,11 +1,11 @@
 <div class="container p-4">
 <h1 class="fw-bolder">Mon suivi</h1>
  <div>
-    <% @tasks.each do |task| %>
-      <h5> 😷 Mes symptômes : <%= task.answer.question.content %> </h5>
-      <h5> ☕️ Nos conseils : <%= task.answer.content %> </h5>
-      <h5> 💙 État : <%= task.status %> </h5>
-      <br>
+    <% @net = @answer.content.split("\n")&.map { |element| element.gsub("\n", "")}.reject(&:empty?) %>
+      <%@net.each do |net| %>
+      <div class="container card with-shadow p-4">
+        <p><%= net %></p>
+      </div>
     <% end %>
   </div>
 </div>
