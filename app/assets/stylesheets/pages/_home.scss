@@ -17,14 +17,15 @@ body {
 }
 
 .form-control {
+  width: 500px;
   border-radius: 30px;
   background-color: transparent;
   }
 
-  .form-control-lg {
-    width: 500px;
-    font-size: 1.25rem;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #175e8e, #517ae2);
-    box-sizing: border-box;
-}
+//   .form-control-lg {
+//     width: 500px;
+//     font-size: 1.25rem;
+//     border-radius: 30px;
+//     background: linear-gradient(135deg, #175e8e, #517ae2);
+//     box-sizing: border-box;
+// }
