@@ -1,10 +1,9 @@
 <div class="container mb-3">
 <h1 class="fw-bolder">Mon suivi</h1>
  <div>
-    <% @net = @answer.content.split("\n")&.map { |element| element.gsub("\n", "")}.reject(&:empty?) %>
-      <%@net.each do |net| %>
+      <%@answer.tasks.each do |task|%>
       <div class="container card with-shadow p-4">
-        <p><%= net %></p>
+        <p><%= task.content %></p>
       </div>
     <% end %>
   </div>
