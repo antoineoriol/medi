@@ -1,2 +1,13 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<div class="container p-4">
+<h1 class="fw-bold">Créer une tâche</h1>
+  <div class="row">
+    <%= simple_form_for [@question, @answer, @task] do |f| %>
+      <div class="col-md-auto fst-italic">
+        <%= f.input :status, as: :select, collection: [['✅',true], ['❌',false]] %>
+      </div>
+      <div class="col mt-5">
+        <%= f.submit "Créer une tâche", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+  </div>
+</div>
