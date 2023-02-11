@@ -6,6 +6,8 @@
     </div>
   <div>
     <p class="fs-3 text">Réponse :</p>
-    <p class="fw-semibold">👉🏻 <%= @answer.content %></p>
+    <ul class="list-group">
+      <p class="fw-semibold">👇🏻 <%= @answer.content.html_safe %></p>
+    </ul>
   </div>
 </div>

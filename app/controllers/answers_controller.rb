@@ -1,9 +1,10 @@
+require 'ruby/openai'
+
 class AnswersController < ApplicationController
   before_action :set_question, only: %i[create new]
   before_action :set_answer, only: %i[show]
 
   def create
-    @answer = Answer.new(question_id: @question.id, content: params[:answer][:content])
     if @answer.save
       redirect_to new_question_answer_task_path(@question, @answer)
     else
