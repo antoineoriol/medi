@@ -24,6 +24,27 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
+  end
+
+  private
+
+  def set_task
+    @task = Task.find_by(answer_id: params[:answer_id])
+  end
+
+  def set_answer
+    @answer = Answer.find(params[:answer_id])
+  end
+
+  def set_question
+    @question = Question.find(params[:question_id])
+  end
+
+  def task_params
+    params.require(:task).permit(:status)
   end
 
   private
