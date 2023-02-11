@@ -20,9 +20,9 @@ class QuestionsController < ApplicationController
     client = OpenAI::Client.new
     response = client.completions(
       parameters: {
-        model: "text-davinci-003",
+        model: "text-davinci-001",
         prompt: "#{@question.content}, peux-tu me dire que sous forme de liste de 8 éléments maximum quoi faire avec des remèdes de grand-mère ?",
-        max_tokens: 400
+        max_tokens: 100
       })
     response["choices"].map { |c| c["text"] }
   end
