@@ -1,10 +1,10 @@
 <div class="container p-4">
-<h1 class="fw-bolder">Mon suivi</h1>
+<h1 class="fw-bolder text-center">Suis ces étapes pour résoudre ton soucis</h1>
  <div>
     <% @net = @answer.content.split("\n")&.map { |element| element.gsub("\n", "")}.reject(&:empty?) %>
       <%@net.each do |net| %>
-      <div class="container card with-shadow p-4">
-        <p><%= net %></p>
+      <div class="container shadow-lg p-3 mb-5 bg-white rounded card justify-content-between p-3 mt-4" style="width: 18rem;">
+          <h5 class="card-title fw-bolder"> <%= net %></h5>
       </div>
     <% end %>
   </div>
