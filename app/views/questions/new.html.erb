@@ -1,13 +1,4 @@
-<div class="container p-4">
+<div class="container">
 <h1 class="fw-bold">Poser une question</h1>
-  <div class="row">
-    <%= simple_form_for @question do |f| %>
-      <div class="col-md-auto fst-italic">
-        <%= f.input :content, label: 'Saisir votre question :', placeholder: "J'ai mal au pied" %>
-      </div>
-      <div class="col mt-5">
-        <%= f.submit "Poster une question", class: "btn btn-primary" %>
-      </div>
-      <% end %>
-  </div>
+  <%= render "input", question: @question %>
 </div>

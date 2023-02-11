@@ -1,4 +1,15 @@
-<div class="container p-4">
-  <h1 class="fw-bold">Bienvenue chez Medi 💙</h1>
-  <button class="border border-0 p-0"><%= link_to "Poser ma question", new_question_path, class: "btn btn-primary" %></button>
+<div class="container">
+	<h1> Bienvenue chez Medi 💙</h1>
+  <h4><span data-controller="typed-js"></span></h4>
+  <br>
+  <h4 class="">
+		<strong> Peux-tu me dire tes symptômes ?</strong>
+	</h4>
+		<span class=""><%= render "questions/input", question: @question %></span>
+   <script>
+        ScrollReveal({ reset: true });
+        ScrollReveal().reveal('.headline');
+        ScrollReveal().reveal('.tagline', { delay: 4000 });
+        ScrollReveal().reveal('.punchline', { delay: 5000 });
+    </script>
 </div>

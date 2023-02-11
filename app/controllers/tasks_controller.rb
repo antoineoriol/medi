@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[show destroy]
+  before_action :set_task, only: %i[show destroy index]
   before_action :set_answer, only: %i[create new index]
   before_action :set_question, only: %i[create new index]
 
