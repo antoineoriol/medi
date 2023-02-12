@@ -1,9 +1,10 @@
 <div class="container p-4">
-<h1 class="fw-bolder">Mon suivi</h1>
- <div>
+<h1 class="fw-bolder text-center">Suivez ces tâches pour retrouver la santé</h1>
+ <div class="d-flex flex-row ">
       <%@answer.tasks.each do |task|%>
-      <div class="container card with-shadow p-4">
-        <p><%= task.content %></p>
+      <div class="card m-3 shadow-lg p-3 mt-5 bg-white rounded border border-dark" style="width: 18rem;">
+        <p class="text-center"><%= task.content %></p>
+        <p class="text-center"><%= task.status %></p>
       </div>
     <% end %>
   </div>
