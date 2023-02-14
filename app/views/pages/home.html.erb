@@ -1,16 +1,10 @@
-<div class="container">
+<div class="container ">
 	<h1> Bienvenue chez Medi 💙</h1>
   <h4><span data-controller="typed-js"></span></h4>
   <br>
   <br>
-  <h4 class="">
-		<strong> Peux-tu me dire tes symptômes ?</strong>
-	</h4>
-		<span class=""><%= render "questions/input", question: @question %></span>
-   <script>
-        ScrollReveal({ reset: true });
-        ScrollReveal().reveal('.headline');
-        ScrollReveal().reveal('.tagline', { delay: 4000 });
-        ScrollReveal().reveal('.punchline', { delay: 5000 });
-    </script>
+  <h4><strong> Peux-tu me dire tes symptômes ?</strong></h4>
+		<span><%= render "questions/input", question: @question %></span>
+
+
 </div>
