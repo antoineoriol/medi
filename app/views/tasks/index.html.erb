@@ -1,10 +1,41 @@
-<div class="container mb-3">
-<h1 class="fw-bolder">Mon suivi</h1>
- <div>
-      <%@answer.tasks.each do |task|%>
-      <div class="container card with-shadow p-4">
-        <p><%= task.content %></p>
-      </div>
-    <% end %>
+<div class="slide-container">
+  <h1 class="fw-bolder headline load-hidden">Mon suivi</h1>
+<div class="slide-container">🏅 Parcours  0%</div>
+
+<div class="card-wrapper">
+  <div class="slide-content">
+    <div class='widget-list'>
+      <% @answer.tasks.each do |task|%>
+        <div class="card widget" data-controller="disable-card">
+          <div class='header-content'>
+            <span class='overlay'></span>
+
+            <div class="card-title">
+              <h3>Tasks</h3>
+
+            </div>
+          </div>
+
+          <div class="card-content">
+            <p class="description"><%= task.content %></p>
+              <div class="form-check form-switch"
+                data-action="click->disable-card#disable"
+                data-disable-card-target="card">
+                <input class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" checked>
+                <label class="form-check-label" for="disableCard-<%= task.id %>">
+
+                </label>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+
+  <script>
+    ScrollReveal().reveal('.headline', { duration: 2000 });
+    ScrollReveal().reveal('.widget', { interval: 200 });
+  </script>

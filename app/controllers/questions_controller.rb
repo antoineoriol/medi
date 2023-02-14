@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
       parameters: {
         model: "text-davinci-001",
         prompt: "#{@question.content}, renvoie moi un array de 5 meilleures remedes de grand mere",
-        max_tokens: 100
+        max_tokens: 200
       }
     )
     response['choices']&.first&.dig('text')

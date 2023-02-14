@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DisableCardController from "./disable_card_controller"
+application.register("disable-card", DisableCardController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

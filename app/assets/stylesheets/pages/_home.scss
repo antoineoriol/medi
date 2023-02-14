@@ -1,12 +1,12 @@
 // Specific CSS for your home-page
 body {
   h1, h4 {
-    color: white !important;
+    color: rgb(15, 14, 14) !important;
   }
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: image-url('line2.gif');
+  background-image: image-url('back.jpg');
   background-size: cover;
 }
 
@@ -20,3 +20,8 @@ body {
   border-radius: 30px;
   background-color: transparent;
   }
+
+footer {
+  background-image: image-url('line.gif');
+  background-size: cover;
+}
