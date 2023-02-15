@@ -8,18 +8,13 @@ export default class extends Controller {
     const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
     checkbox.checked = !checkbox.checked
     if (checkbox.checked) {
-      this.element.closet('.card-title h3').innerText = 'Valide';
+      this.element.querySelector('.card-title h3').innerText = 'Valide';
     } else {
       this.element.querySelector('.card-title h3').innerText = 'Tasks';
       card.classList.remove('disabled');
     }
   }
 
-  reset() {
-    this.buttonTarget.innerText = "Click me!"
-    this.buttonTarget.removeAttribute("disabled")
-    this.linkTarget.classList.add("d-none")
-  }
 }
 
 
