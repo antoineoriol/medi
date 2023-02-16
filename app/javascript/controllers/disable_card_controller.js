@@ -7,7 +7,7 @@ export default class extends Controller {
     this.element.closest('.card').classList.add('disabled');
     const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
     checkbox.checked = !checkbox.checked
-    if (checkbox.checked) {
+    if (this.checked) {
       this.element.querySelector('.card-title h3').innerText = 'Valide';
     } else {
       this.element.querySelector('.card-title h3').innerText = 'Tasks';

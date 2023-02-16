@@ -1,9 +1,10 @@
-
+<br>
 <div class="slide-container">
   <h2>Bonjour <%= current_user.email %> </h2>
   <h1 class="fw-bolder headline load-hidden">Les conseils de Medi</h1>
   <h3 class="headline">Votre symptome: <%= @question.content %></h3>
-  <div class="slide-container">🏅 Parcours  0%</div>
+  <div class="">🏅 Parcours  0%</div>
+    <div><p><%= image_tag 'pdf.png', class:'icon-pdf' %> Exporter en format PDF</p></div>
 
   <div class="card-wrapper">
     <div class="slide-content">
