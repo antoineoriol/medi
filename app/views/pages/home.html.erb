@@ -1,10 +1,23 @@
-<div class="container ">
-	<h1> Bienvenue chez Medi 💙</h1>
-  <h4><span data-controller="typed-js"></span></h4>
-  <br>
-  <br>
-  <h4><strong> Peux-tu me dire tes symptômes ?</strong></h4>
-		<span><%= render "questions/input", question: @question %></span>
+
+<div class="container">
+  <div class="shadow rounded-4 p-5">
+    <div class="row g-4">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h1 class="card-title">Bienvenue chez Medi 💙</h1>
+          <h4><span data-controller="typed-js"></span></h4>
+          <br>
+          <br>
+          <h4><strong> Peux-tu me dire tes symptômes ?</strong></h4>
+          <span><%= render "questions/input", question: @question %></span>
+        </div>
+        <br>
+      </div>
+      <div class="col-md-2">
+        <%= image_tag 'medi.png', class:'logo-medi' %>
+      </div>
+  </div>
+</div>
   <br>
   <div class='footer'>
     <h2>Qu’est-ce que l’automédication ?</h2>
@@ -19,5 +32,19 @@
     <p>Prendre un médicament sans avis médical est à envisager avec prudence.
     En effet, l’automédication comporte des risques qui peuvent être liés à la personne,
     à la maladie ou aux symptômes que l’on souhaite traiter ou encore au médicament lui-même.</p>
+  </div>
+  <div class="shadow rounded-4 p-5">
+    <h2>MEDI vous fournit une évaluation rapide et précise des symptômes</h2>
+    <ol class="list-unstyled list-circles">
+      <li class="circle">Indiquez vos symptômes</li>
+      <li class="circle">Répondez à quelques questions simples</li>
+      <li class="circle">C'est fait ! Votre évaluation révélera:
+        <ul class="list-unstyled list-consult-profits">
+          <li class="tick">causes possibles de vos symptômes</li>
+          <li class="tick">options pour les prochaines étapes</li>
+          <li class="tick">résumé des symptômes présents et absents</li>
+        </ul>
+      </li>
+    </ol>
   </div>
 </div>

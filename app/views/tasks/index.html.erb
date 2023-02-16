@@ -1,7 +1,8 @@
 
 <div class="slide-container">
-  <h1 class="fw-bolder headline load-hidden">Mon suivi</h1>
-  <h3><%= @question.content %></h3>
+  <h2>Bonjour <%= current_user.email %> </h2>
+  <h1 class="fw-bolder headline load-hidden">Les conseils de Medi</h1>
+  <h3 class="headline">Votre symptome: <%= @question.content %></h3>
   <div class="slide-container">🏅 Parcours  0%</div>
 
   <div class="card-wrapper">
