@@ -6,30 +6,29 @@ export default class extends Controller {
   disable() {
     this.element.closest('.card').classList.add('disabled');
     const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
-    checkbox.checked = !checkbox.checked
-    if (this.checked) {
-      this.element.querySelector('.card-title h3').innerText = 'Valide';
-    } else {
-      this.element.querySelector('.card-title h3').innerText = 'Tasks';
-      card.classList.remove('disabled');
-    }
+    // checkbox.checked = !checkbox.checked
   }
 
+  // updateStatus() {
+  //   const taskId = this.element.dataset.taskId
+  //   const status = this.element.querySelector(`#disableCard-${taskId}`).checked
+
+  //   fetch(`/questions/:question_id/answers/:answer_id/tasks/${taskId}`, {
+  //     method: 'PATCH',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+  //     },
+  //     body: JSON.stringify({ task: { status: status } })
+  //   })
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log(data)
+  //     // handle the updated data, such as updating the task's UI or any other necessary updates
+  //   })
+  //   .catch(error => {
+  //     console.error(error)
+  //     // handle any errors that may occur during the AJAX request
+  //   })
+  // }
 }
-
-
-// disable() {
-//   const disableCardCheckbox = document.getElementById("disableCard");
-//   const cards = document.querySelector(".card");
-
-//   disableCardCheckbox.addEventListener("change", function() {
-//     console.log('marcos');
-//     for (let i = 0; i < cards.length; i++) {
-//       if (this.checked) {
-//         cards[i].classList.add("disabled");
-//       } else {
-//         cards[i].classList.remove("disabled");
-//       }
-//     }
-//   });
-// }

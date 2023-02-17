@@ -9,7 +9,7 @@
 body {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   background-color: #efefef;
 }
@@ -29,11 +29,12 @@ body {
 .slide-content{
   margin: 0 40px;
 }
+
 .icon-pdf{
   width: 30px;
 }
 .card {
-  width: 620px;
+  width: 200px;
   border-radius: 25px;
   background-color: #fff;
   transition: all 0.4s ease;
@@ -43,7 +44,7 @@ body {
   transform: translateY(-15px);
 }
 
-.header-content,
+.card-header,
 .card-content{
   display: flex;
   flex-direction: column;
@@ -51,68 +52,52 @@ body {
   padding: 10px 14px;;
 }
 
-.header-content{
+.card-header{
   position: relative;
   row-gap: 5px;
 }
 
 .overlay{
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 50px;
-  width: 100%;
-  background-color: rgb(5, 188, 249);
-  border-radius: 25px 25px 0 25px;
-}
-
-.overlay::before,
-.overlay::after{
-content: "";
-position: absolute;
-right: 0;
-bottom: -40px;
-height: 40px;
-width: 40px;
-background-color: rgb(5, 188, 249);
-}
-
-
-.overlay::after{
-  border-radius: 0 25px 0 0;
-  background-color: #fff;
+  background-color: transparent;
+  transition: all 0.4s ease;
 }
 
 .card-title {
   position: relative;
 }
 
-
 .description{
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 16px;
   color: #999;
   text-align: center;
 }
 
-.disabled {
+.disabled,
+.form-check-input:checked.card:hover{
   pointer-events: none;
-  opacity: 0.8;
-  color: green;
+  opacity: 0.2;
+  color: gray;
   cursor: not-allowed;
 }
 
-.form-switch .form-check-input {
-  // /* width: 2em; */
-  margin-left: -2.5em;
-  background-position: left center;
-  border-radius: 2em;
-  transition: background-position 0.15s ease-in-out;
+
+.form-check .form-check-input {
+  float: left;
+  margin-left: -4.5em;
 }
 
 .form-check-input:checked {
-  background-color: #0D6EFD;
-  border-color: #0D6EFD;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.form-check-input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 html.sr .load-hidden {
@@ -122,16 +107,12 @@ html.sr .load-hidden {
 .widget-list {
   display: flex;
   list-style: none;
-  // margin: 0;
-  // padding: 0;
   background: transparent;
 }
 
 .widget {
-  // flex: auto;
   margin: 0.5rem;
   background: white;
-  // line-height: 20px;
   text-align: center;
 }
 

@@ -1,5 +1,5 @@
-<br>
-<div class="container mt-8">
+
+<div class="container" id="home">
   <div class="shadow rounded-4 p-5">
     <div class="row g-4">
       <div class="col-md-8">
@@ -9,7 +9,7 @@
           <br>
           <br>
           <h4><strong id="color"> Peux-tu me dire tes symptômes ?</strong></h4>
-          <span><%= render "questions/input", question: @question %></span>
+          <%= render "questions/input", question: @question %>
         </div>
         <br>
       </div>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <br>
-  <div class='footer'>
+  <div>
     <h2>Qu’est-ce que l’automédication ?</h2>
     <br>
     <p>On parle d’automédication lorsqu’une personne a recours à un ou plusieurs médicaments,
@@ -37,7 +37,7 @@
     <div class="row g-4">
       <div class="col-md-8">
         <div class="card-body">
-          <h2>MEDI vous fournit une évaluation rapide et précise des symptômes</h2>
+          <h2><strong>MEDI</strong> vous fournit une évaluation rapide et précise des symptômes</h2>
           <ol class="list-unstyled list-circles">
             <li class="circle">Indiquez vos symptômes</li>
             <li class="circle">C'est fait ! Votre évaluation révélera:
