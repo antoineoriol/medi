@@ -4,5 +4,11 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import TaskController from "./task_controller"
+application.register("task", TaskController)
+
+import DisableCardController from "./disable_card_controller"
+application.register("disable-card", DisableCardController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)

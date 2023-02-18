@@ -1,11 +1,43 @@
-<div class="container p-4">
-<h1 class="fw-bolder text-center">Suivez ces tâches pour retrouver la santé</h1>
- <div class="d-flex flex-row ">
-      <%@answer.tasks.each do |task|%>
-      <div class="card m-3 shadow-lg p-3 mt-5 bg-white rounded border border-dark" style="width: 18rem;">
-        <p class="text-center"><%= task.content %></p>
-        <p class="text-center"><%= task.status %></p>
+<div class="container">
+
+<h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
+<p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
+ <div class="text-center">
+<p class="text-center"><%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
+  <button class="border border-0"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
+</div>
+  <div class="card-wrapper">
+    <div class="slide-content">
+      <div class="widget-list row row-cols-1 row-cols-md-3 g-3">
+        <% @answer.tasks.each do |task|%>
+          <div class="shadow card mb-3 widget"
+            data-disable-card-target="card"         >
+            <div class="card-header bg-transparent " >
+              <div class="form-check form-check-inline"
+                data-controller="disable-card task"
+                data-action="click->disable-card#disable ">
+                <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" data-action="click->task#update" >
+              <%# <label class="form-check-label" for="disableCard-<%#= task.id %>
+              <%#  </label> %>
+                <div >
+                  <%= button_to '❌', task_path(task), class: 'button', method: :delete, data: {turbo_method: :delete} %>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="description"><%= task.content %></p>
+            </div>
+            <div class="card-footer bg-transparent ">🏅 20%</div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+</div>
+
+  <script>
+    ScrollReveal().reveal('.headline', { duration: 2000 });
+    ScrollReveal().reveal('.widget', { interval: 200 });
+  </script>
+
 </div>
