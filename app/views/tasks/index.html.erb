@@ -1,10 +1,15 @@
-<div class="container p-4">
+<div class="container pt-4">
 <h1 class="fw-bolder">Mon suivi</h1>
+<p>Mes symptômes : <%= @question.content.capitalize %>.</p>
+<p><%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
  <div>
       <%@answer.tasks.each do |task|%>
-      <div class="container card with-shadow p-4">
-        <p><%= task.content %></p>
+      <div class="container p-1">
+        <div class="d-inline-flex card p-3 ">
+          <p><%= task.content %></p>
+        </div>
       </div>
     <% end %>
   </div>
+  <button class="border border-0 pt-3"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
 </div>
