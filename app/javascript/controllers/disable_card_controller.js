@@ -3,6 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ "card" ]
 
+  connect(){
+    console.log('hello from disable card controller')
+  }
+
   disable() {
     this.element.closest('.card').classList.add('disabled');
     const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
