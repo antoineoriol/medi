@@ -4,6 +4,12 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Tasks", template: "tasks/index", layout: "pdf"   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def update

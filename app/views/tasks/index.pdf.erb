@@ -1,0 +1,24 @@
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+<div class="pdf-header">
+    <h1>Pour retrouver <span>la forme</span></h1>
+    <div class="symptom-container">
+    <h3 class="symptom-title">Tes symptômes :</h3>
+    <p class="symptom-tag"><%= @question.content.capitalize %>.</p>
+    </div>
+    <p class='conseil-text'>Les conseils de Medi :</p>
+  </div>
+ <div>
+      <%@answer.tasks.each do |task|%>
+      <div class="task-container">
+          <div class='empty-square-container'>
+            <div class='empty-square'></div>
+          </div>
+          <p class="task-content"><%= task.content %></p>
+      </div>
+    <% end %>
+  </div>
+  <div>
+  <p class="alert-message">Medi ne remplace pas un médecin. Si vos symptômes persistent, il est nécessaire de consulter un professionnel de la santé.</p>
+  </div>
+</div>

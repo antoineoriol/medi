@@ -1,5 +1,7 @@
 <div class="container p-4">
-<h1 class="fw-bolder text-center">Suis ces étapes pour résoudre ton soucis</h1>
+<h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
+<p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
+<p class="text-center"><%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
  <div class="d-flex flex-row">
       <%@answer.tasks.each do |task|%>
       <div class="container card with-shadow p-4 m-2"  data-controller="task">
@@ -16,4 +18,5 @@
       </div>
     <% end %>
   </div>
+  <button class="border border-0 pt-3"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
 </div>

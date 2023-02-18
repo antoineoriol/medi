@@ -1,0 +1,132 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+// @import "font-awesome-sprockets";
+@import "font-awesome";
+
+h1 {
+  // position: absolute;
+  // width: 602px;
+  // height: 250px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  // font-size: 70px;
+  // line-height: 85px;
+  letter-spacing: -0.07em;
+
+  color: #000000;
+
+  span {
+    font-weight: bolder;
+    color: rgba(6, 106, 246, 1);
+  }
+}
+
+.symptom-title {
+  // position: absolute;
+  // width: 1074px;
+  // height: 66px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: -0.07em;
+
+  color: #000000;
+}
+
+// .pdf-header {
+//   margin-bottom: 4rem;
+// }
+
+.symptom-container {
+  margin-top: 2rem;
+  display: -webkit-box;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.symptom-tag {
+  color:rgba(6, 106, 246, 1);
+  background-color: rgba(6, 106, 246, 0.1);
+  border-radius: 0.5rem;
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+.conseil-text {
+  margin-bottom: 50px;
+  width: 50%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: bolder;
+  color:rgba(6, 106, 246, 1);
+  margin-top: 1rem;
+  font-size: 26px;
+  letter-spacing: -0.07em;
+}
+
+.task-container {
+  width: 80%;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  display: -webkit-box;
+  gap: 2rem;
+  align-items: center;
+  place-content: center;
+  // -webkit-box-pack: center;
+  height: 6rem;
+  // background-color: aqua;
+}
+
+.empty-square-container {
+  width: 10%;
+  display: -webkit-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+}
+
+.empty-square {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.85);
+  border-radius: 0.5rem;
+}
+
+.task-content {
+  width: 90%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: -0.07em;
+
+  color: #000000;
+  align-self: center;
+}
+
+.alert-message {
+  margin-top: 300px;
+  font-family: 'Inter';
+  display: -webkit-box;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 36px;
+  letter-spacing: -0.07em;
+
+  color: #000000;
+}
