@@ -1,9 +1,18 @@
 <div class="container p-4">
-<h1 class="fw-bolder">Mon suivi</h1>
- <div>
+<h1 class="fw-bolder text-center">Suis ces étapes pour résoudre ton soucis</h1>
+ <div class="d-flex flex-row">
       <%@answer.tasks.each do |task|%>
-      <div class="container card with-shadow p-4">
-        <p><%= task.content %></p>
+      <div class="container card with-shadow p-4 m-2"  data-controller="task">
+        <div class="head-containe d-flex align-items-end justify-content-between">
+          <div class="cross">
+            <%= button_to "❌", task_path(task), method: :delete %>
+          </div>
+          <div class="valided btn" data-url="<%= question_answer_task_path(@question, @answer, task) %>" data-action="click->task#update">
+            ✔️
+          </div>
+        </div>
+      <hr>
+        <p class="d-flex align-items-end"><%= task.content %></p>
       </div>
     <% end %>
   </div>
