@@ -17,10 +17,10 @@
                 data-controller="disable-card task"
                 data-action="click->disable-card#disable ">
                 <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" data-action="click->task#update" >
-                <label class="form-check-label" for="disableCard-<%= task.id %>">
-                </label>
+              <%# <label class="form-check-label" for="disableCard-<%#= task.id %>
+              <%#  </label> %>
                 <div >
-                  <%= button_to '❌', task_path(task),  method: :delete %>
+                  <%= button_to '❌', task_path(task), class: 'button', method: :delete, data: {turbo_method: :delete} %>
                 </div>
               </div>
             </div>
