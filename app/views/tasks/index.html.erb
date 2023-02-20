@@ -1,27 +1,25 @@
 <div class="container">
-
-<h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
-<p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
- <div class="text-center">
-<p class="text-center"><%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
-  <button class="border border-0"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
-</div>
+  <h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
+  <p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
+  <div class="text-center">
+    <p class="text-center"><%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
+    <button class="border border-0"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
+  </div>
   <div class="card-wrapper">
     <div class="slide-content">
       <div class="widget-list row row-cols-1 row-cols-md-3 g-3">
         <% @answer.tasks.each do |task|%>
           <div class="shadow card mb-3 widget"
-            data-disable-card-target="card"         >
+            data-disable-card-target="card">
             <div class="card-header bg-transparent " >
-              <div class="form-check form-check-inline"
+              <div class="form-check form-check"
                 data-controller="disable-card task"
-                data-action="click->disable-card#disable ">
+                data-action="click->disable-card#disable">
                 <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" data-action="click->task#update" >
-              <%# <label class="form-check-label" for="disableCard-<%#= task.id %>
-              <%#  </label> %>
-                <div >
-                  <%= button_to '❌', task_path(task), class: 'button', method: :delete, data: {turbo_method: :delete} %>
-                </div>
+
+                <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
+                <%#= link_to "Supprimer", task_path(task), method: :delete, data: { turbo_method: :delete } %>
+
               </div>
             </div>
             <div class="card-body">

@@ -15,7 +15,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(status: true)
+    @task.update(status: !@task.status)
+    head :no_content
   end
 
   def destroy

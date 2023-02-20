@@ -10,5 +10,6 @@ export default class extends Controller {
 
   async update(event) {
     await patch(event.target.dataset.url);
+    
   }
 }
