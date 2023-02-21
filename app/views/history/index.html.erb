@@ -1,0 +1,9 @@
+<h1>Historique</h1>
+<div class="d-flex">
+  <% @questions.each do |question| %>
+    <h2><%= question.content %></h2>
+    <% question.answer.tasks.each do |task|  %>
+      <p><%= task.content %></p>
+    <% end %>
+  <% end %>
+</div>
