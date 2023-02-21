@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container align-items-center">
   <h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
   <p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
   <div class="text-center">
@@ -15,10 +15,9 @@
               <div class="form-check form-check"
                 data-controller="disable-card task"
                 data-action="click->disable-card#disable">
-                <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" data-action="click->task#update" >
+                <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" >
 
                 <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
-                <%#= link_to "Supprimer", task_path(task), method: :delete, data: { turbo_method: :delete } %>
 
               </div>
             </div>

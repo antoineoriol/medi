@@ -1,30 +1,33 @@
 // Specific CSS for your home-page
+@media (min-width: 576px) {
 body {
   h1, h4 {
     color: rgb(15, 14, 14) !important;
   }
   justify-content: center;
   align-items: center;
-  background-image: image-url('back.jpg');
+  // background-image: image-url('back.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
 
-.img-card{
-  width: 450px;
-}
 
-.container {
-  // max-width: 960px;
-  margin-top: 5rem;
-}
-
-#color{
-  color: rgb(5, 188, 249);
-}
-
-.form-control {
-  width: 500px;
-  border-radius: 30px;
-  background-color: transparent;
+  .img-card{
+    width: 350px;
   }
+
+  .container {
+    max-width: auto;
+    margin-top: 5rem;
+  }
+
+  #color{
+    color: rgb(5, 188, 249);
+  }
+
+  .form-control {
+    width: 400px;
+    border-radius: 30px;
+    background-color: transparent;
+  }
+}
