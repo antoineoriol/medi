@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :history, only: %i[index]
+
   resources :tasks, only: %i[destroy]
 
   devise_for :users
