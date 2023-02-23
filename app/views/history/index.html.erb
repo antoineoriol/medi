@@ -1,15 +1,15 @@
 
 <div class="container">
-  <nav>
+  <%# <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Historique</button>
 
     </div>
-  </nav>
+  </nav> %>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
     <br>
-      <h1>Mon suivi</h1>
+      <h1 class="mb-5 pt-5">Mon Historique</h1>
         <ul class="list-group">
             <% @questions.each do |question| %>
           <li class="list-group-item list-group-item-primary">

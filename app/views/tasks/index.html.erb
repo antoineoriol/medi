@@ -3,7 +3,7 @@
   <p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
   <div class="text-center">
     <p class="text-center"> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
-    <button class="border border-0"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn btn-primary" %></button>
+    <button class="border border-0"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn " %></button>
   </div>
   <div class="card-wrapper">
     <div class="slide-content">
