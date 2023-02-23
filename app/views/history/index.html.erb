@@ -19,7 +19,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-secondary">
-            <% question.answer&.tasks.each do |task|  %>
+            <% question.answer&.tasks&.each do |task|  %>
               <p><%= task.content %></p>
             <% end %>
           <% end %>
