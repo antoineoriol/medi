@@ -15,13 +15,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(status: true)
+    @task.update(status: !@task.status)
+    head :no_content
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to question_answer_tasks_path(@task.answer.question_id, @task.answer_id)
+
   end
 
   private
