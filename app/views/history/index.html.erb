@@ -1,9 +1,16 @@
-<h1>Historique</h1>
-<div class="d-flex">
-  <% @questions.each do |question| %>
-    <h2><%= question.content %></h2>
-    <% question.answer.tasks.each do |task|  %>
-      <p><%= task.content %></p>
-    <% end %>
-  <% end %>
+<div class="all w-75">
+  <h1 class="display-5 mb-5">Historiques</h1>
+  <div class="">
+    <% @questions.each do |question| %>
+      <div class="question d-flex justify-content-between">
+        <h2><%= question.content %></h2>
+        <p class="d-flex align-items-end"><%= question.created_at.strftime('%d-%m-%Y') %></p>
+      </div>
+    <div class="result">
+        <% question.answer.tasks.each do |task|  %>
+          <p><%= task.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
