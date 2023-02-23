@@ -11,7 +11,7 @@
     <br>
       <h1 class="mb-5 pt-5">Mon Historique</h1>
         <ul class="list-group">
-            <% @questions.each do |question| %>
+            <% @questions.order(created_at: :desc).each do |question| %>
           <li class="list-group-item list-group-item-primary">
             <div class="d-flex justify-content-between">
                 <h2>Symptome: <%= question.content %></h2>
@@ -19,7 +19,7 @@
             </div>
           </li>
           <li class="list-group-item list-group-item-secondary">
-            <% question.answer.tasks.each do |task|  %>
+            <% question.answer&.tasks.each do |task|  %>
               <p><%= task.content %></p>
             <% end %>
           <% end %>
