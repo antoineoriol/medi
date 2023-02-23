@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 body {
+  font-family: $body-font;
   h1, h4 {
     color: rgb(15, 14, 14) !important;
   }
@@ -10,7 +11,23 @@ body {
   background-size: cover;
 }
 
-.img-card{
+.send-button {
+  font-family: $body-font;
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  padding : 10px 20px;
+  border-radius: 8px;
+  transition: .3s;
+  }
+
+.send-button:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+  }
+
+  .img-card{
   width: 450px;
 }
 
@@ -19,8 +36,17 @@ body {
   margin-top: 5rem;
 }
 
-#color{
-  color: rgb(5, 188, 249);
+.input-question {
+  font-weight: lighter;
+}
+
+.flag {
+  background-color: #3b82f6;
+  font-weight: lighter;
+  font-size: 18px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
 }
 
 .form-control {
