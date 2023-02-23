@@ -1,28 +1,23 @@
 /* utility */
+@media (min-width: 576px) {
 
-*{
-  margin: 0;
+  *{
+    margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body {
-  min-height: 100vh;
-  display: flex;
-  // align-items: center;
-  justify-content: center;
-  background-color: #efefef;
-}
 
 .slide-container{
   margin-top: 50px;
-  max-width: 1220px;
   width: 100%;
   background-color: transparent;
   padding: 40px 0;
 }
 
 .card-wrapper{
+  display: flex;
+  justify-content: center;
   padding-top: 35px;
   column-gap: 8px;
 }
@@ -35,7 +30,7 @@ body {
   width: 30px;
 }
 .card {
-  width: 200px;
+  width: 190px;
   border-radius: 25px;
   background-color: #fff;
   transition: all 0.4s ease;
@@ -74,38 +69,41 @@ body {
   text-align: center;
 }
 
-.disabled,
-.form-check-input:checked.card:hover{
-  pointer-events: none;
-  opacity: 0.2;
-  color: gray;
-  cursor: not-allowed;
-}
+// .disabled,
+// .form-check-input:checked.card:hover{
+  //   pointer-events: none;
+  //   opacity: 0.2;
+  //   color: gray;
+  //   cursor: not-allowed;
+  // }
 
 
-.form-check .form-check-input {
-  float: left;
-  margin-left: -4.5em;
-}
+  .form-check .form-check-input {
+    float: left;
+    margin-left: -4.5em;
+  }
 
-.form-check-input:checked {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: green;
-}
+  .form-check-input:checked {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: green;
+  }
 
-.form-check-input[type="checkbox"] {
-  width: 30px;
-  height: 30px;
+  .form-check-input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 
 .button{
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+  margin-top: 3px;
   border-radius: 50%;
-  margin-right: -5.5em;
+  border: none;
+  outline: none;
+  margin-right: -4.5em;
 }
 
 html.sr .load-hidden {
@@ -127,4 +125,6 @@ html.sr .load-hidden {
 /* extension */
 html.sr .widget {
   visibility: hidden;
+}
+
 }

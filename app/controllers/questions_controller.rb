@@ -36,9 +36,9 @@ class QuestionsController < ApplicationController
     client = OpenAI::Client.new
     response = client.completions(
       parameters: {
-        model: "text-davinci-003",
+        model: "text-davinci-001",
         prompt: "#{@question.content}, renvoie moi sous forme de listes 5 meilleures solutions d'automédication",
-        max_tokens: 300,
+        max_tokens: 400,
         temperature: 0.9
       }
     )

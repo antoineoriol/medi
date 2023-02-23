@@ -1,17 +1,17 @@
-import { Controller } from "@hotwired/stimulus"
+// import { Controller } from "@hotwired/stimulus"
 
-export default class extends Controller {
-  static targets = [ "card" ]
+// export default class extends Controller {
+//   static targets = [ "card" ]
 
-  connect(){
-    console.log('hello from disable card controller')
-  }
+//   connect(){
+//     console.log('hello from disable card controller')
+//   }
 
-  disable() {
-    this.element.closest('.card').classList.add('disabled');
-    const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
-    // checkbox.checked = !checkbox.checked
-  }
+//   disable() {
+//     this.element.closest('.card').classList.add('disabled');
+//     const checkbox = this.element.querySelector(`#disableCard-${this.element.dataset.taskId}`)
+//     // checkbox.checked = !checkbox.checked
+//   }
 
   // updateStatus() {
   //   const taskId = this.element.dataset.taskId
@@ -35,4 +35,4 @@ export default class extends Controller {
   //     // handle any errors that may occur during the AJAX request
   //   })
   // }
-}
+// }
