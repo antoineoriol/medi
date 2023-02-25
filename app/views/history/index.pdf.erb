@@ -1,0 +1,10 @@
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+<div class="pdf-header">
+    <h1>Pour retrouver <span>la forme</span></h1>
+    <div class="symptom-container">
+    <h3 class="symptom-title">Tes symptômes était:</h3>
+    <%= @questions.each do |question| %>
+    <%= question %>
+    <% end %>
+    </div>
