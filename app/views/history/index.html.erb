@@ -9,17 +9,17 @@
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
     <br>
-      <h1 class="mb-5 pt-5">Mon Historique</h1>
+      <h1 class="mb-5 pt-5 text-center">Mon Historique</h1>
         <ul class="list-group">
-            <% @questions.each do |question| %>
+            <% @questions.order(created_at: :desc).each do |question| %>
           <li class="list-group-item list-group-item-primary">
             <div class="d-flex justify-content-between">
                 <h2>Symptome: <%= question.content %></h2>
-                <p> <%= question.created_at.strftime('%d-%m-%Y') %> </p>
+                <p> <%= question.created_at.strftime('%d-%m-%Y - %Hh%M') %> </p>
             </div>
           </li>
           <li class="list-group-item list-group-item-secondary">
-            <% question.answer.tasks.each do |task|  %>
+            <% question.answer&.tasks&.each do |task|  %>
               <p><%= task.content %></p>
             <% end %>
           <% end %>
