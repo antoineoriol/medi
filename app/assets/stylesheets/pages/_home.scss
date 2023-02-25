@@ -63,9 +63,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center; /* Centrer horizontalement */
-  position: fixed;
-  top: 35%;
-  left: 50%;
+  position: relative;
+  top: 45%;
+  left: 45%;
   // transform: translate(-50%, -50%);
   transform: rotate(45deg);
   transform-origin: 40px 40px;
@@ -78,7 +78,7 @@ body {
   position: absolute;
   width: 32px;
   height: 32px;
-  background: #fff;
+  background: linear-gradient(blue, rgb(61, 75, 235));
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .lds-heart div:after,
@@ -88,7 +88,7 @@ body {
   display: block;
   width: 32px;
   height: 32px;
-  background: #fff;
+  background: linear-gradient(rgb(19, 19, 127), rgb(8, 8, 162));
 }
 .lds-heart div:before {
   left: -24px;
