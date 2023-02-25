@@ -16,10 +16,11 @@
               <% question.answer&.tasks&.each do |task|  %>
                 <p><%= task.content %></p>
               <% end %>
-              <p class="text-center mt-5  d-flex justify-content-end"> <%= image_tag 'pdf.png', class:"icon-pdf" %></p>
+              <p class="text-center mt-5  d-flex justify-content-end"> <%= image_tag 'pdf.png', class:"icon-pdf" %>
                 <% if question&.answer %>
                   <%= link_to "Télécharger ma fiche", question_answer_tasks_path(question, question.answer, format: :pdf), target: :_blank, class: "text-decoration-none" %>
                 <% end %>
+              </p>
             </li>
               <% end %>
         </ul>
