@@ -1,19 +1,19 @@
-<div class="container align-items-center">
-  <h1 class="fw-bolder text-center fw-bolder mt-5">Mon suivi</h1>
-  <p class="text-center fw-bolder mt-5">Mes symptômes : <%= @question.content.capitalize %>.</p>
+<div class="container align-items-center" data-controller="disable-card task">
+  <h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
+  <p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
   <div class="text-center">
     <p class="text-center mt-5"> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
     <button class="border border-0 mt-3"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn " %></button>
   </div>
+  <div class="p-4"><%= "Les #{@answer.tasks.length} conseils de Medi" %></div>
+  <div data-task-target="result"></div>
   <div class="card-wrapper">
     <div class="slide-content">
-      <div class="widget-list row row-cols-1 row-cols-md-3 g-3 mt-3">
+      <div class="widget-list row row-cols-1 row-cols-md-3 g-3" data-task-target="card">
         <% @answer.tasks.each do |task|%>
-          <div class="shadow card mb-3 widget"
-            data-disable-card-target="card">
+          <div class="shadow card mb-3 widget">
             <div class="card-header bg-transparent " >
               <div class="form-check form-check"
-                data-controller="disable-card task"
                 data-action="click->disable-card#disable">
                 <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" >
 
@@ -23,8 +23,11 @@
             </div>
             <div class="card-body">
               <p class="description"><%= task.content %></p>
+            <div class="d-flex d-inline-flex card-footer bg-transparent">
+              <span class="" data-task-target="score"></span>
+              <span>%</span>
             </div>
-            <div class="card-footer bg-transparent ">🏅 20%</div>
+            </div>
           </div>
         <% end %>
       </div>
