@@ -1,5 +1,10 @@
-<div class="row">
-  <%= simple_form_for question do |f| %>
+
+
+
+<div class="row " data-controller="loading">
+
+  <h4 class="input-question"> Peux-tu me dire tes <span class="flag">symptômes ?</span></h4>
+  <%= simple_form_for question, data: {action: "submit->loading#loading"} do |f| %>
     <div>
       <%= f.input :content, label: false, placeholder: "J'ai mal au ventre, courbatures, ..." %>
     </div>
@@ -7,3 +12,5 @@
       <%= f.submit "Rechercher", class: "send-button" %>
     </div>
     <% end %>
+    </div>
+</div>

@@ -1,37 +1,24 @@
 
-<div class="container">
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Historique</button>
+<div class="container p-5" style="margin-top: 80px;">
 
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-    <br>
-      <h1>Mon suivi</h1>
+  <div class="shadow rounded-4">
+    <div class="tab-pane">
+      <h1 class="text-center p-4">Mon historique</h1>
         <ul class="list-group">
-            <% @questions.each do |question| %>
-          <li class="list-group-item list-group-item-primary">
-            <div class="d-flex justify-content-between">
-                <h2>Symptome: <%= question.content %></h2>
+          <% @questions.each do |question| %>
+            <li class="list-group-item active border border-4 border-start-0 border-end-0">
+              <div class="d-flex justify-content-between">
+                <h3>Symptome: <%= question.content %></h3>
                 <p> <%= question.created_at.strftime('%d-%m-%Y') %> </p>
-            </div>
-          </li>
-          <li class="list-group-item list-group-item-secondary">
-            <% question.answer.tasks.each do |task|  %>
-              <p><%= task.content %></p>
-            <% end %>
+              </div>
+            </li>
+            <li class="list-group-item bg-transparent border border-0 p-4">
+              <% question.answer.tasks.each do |task|  %>
+                <p><%= task.content %></p>
+              <% end %>
+            </li>
           <% end %>
-          </li>
         </ul>
-</div>
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-
-    </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-      <%= current_user.email %>
     </div>
   </div>
 </div>

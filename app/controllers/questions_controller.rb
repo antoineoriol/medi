@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(user_id: current_user.id, content: params[:question][:content])
     if @question.save
+      sleep 2
       @answer = Answer.create(question_id: @question.id, content: call_client)
       @answer.content.split("\n")&.map { |element| element.gsub("\n", "") }.reject(&:empty?).each do |task_content|
         Task.create(answer_id: @answer.id, content: task_content)
@@ -38,7 +39,7 @@ class QuestionsController < ApplicationController
       parameters: {
         model: "text-davinci-001",
         prompt: "#{@question.content}, renvoie moi sous forme de listes 5 meilleures solutions d'automédication",
-        max_tokens: 400,
+        max_tokens: 300,
         temperature: 0.9
       }
     )
