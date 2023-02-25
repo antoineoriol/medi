@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top p-2">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand", id: "home" do %>
-    <%= image_tag 'medi.ico', class:'rounded-pill' %>
+    <%= link_to root_path, class: "navbar" do %>
+    <%= image_tag "medi.png", class: "avatar" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,10 +11,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+
           <li class="nav-item dropdown">
 
-            <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= image_tag "menu.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end shadow rounded-4" aria-labelledby="navbarDropdown">
               <%= link_to "Démarrer un bilan", new_question_path, class: "dropdown-item" %>
               <%= link_to "Historique", history_index_path, class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
@@ -22,7 +23,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Connexion", new_user_session_path, class: "btn btn-outline-primary rounded-pill" %>
+            <%= link_to "Connexion", new_user_session_path, class:'send-button text-decoration-none' %>
           </li>
         <% end %>
       </ul>

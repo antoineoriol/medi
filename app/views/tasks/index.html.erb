@@ -1,43 +1,57 @@
-<div class="container align-items-center" data-controller="disable-card task">
-  <h1 class="fw-bolder text-center fw-bolder">Mon suivi</h1>
-  <p class="text-center fw-bolder">Mes symptômes : <%= @question.content.capitalize %>.</p>
-  <div class="text-center">
-    <p class="text-center mt-5"> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
-    <button class="border border-0 mt-3"><%= link_to "Reposer une question", edit_question_path(@question), class: "btn " %></button>
-  </div>
-  <div class="p-4"><%= "Les #{@answer.tasks.length} conseils de Medi" %></div>
-  <div data-task-target="result"></div>
-  <div class="card-wrapper">
-    <div class="slide-content">
-      <div class="widget-list row row-cols-1 row-cols-md-3 g-3" data-task-target="card">
-        <% @answer.tasks.each do |task|%>
-          <div class="shadow card mb-3 widget">
-            <div class="card-header bg-transparent " >
-              <div class="form-check form-check"
-                data-action="click->disable-card#disable">
-                <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" >
 
-                <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
 
+
+<div class="container" data-controller="task" style='margin-top: 50px;'>
+  <div class="shadow shadow-container">
+    <div class="p-4">
+      <h4 class="fw-bolder">Bonjour 👋🏻<span class="flag"><%= current_user.name %></span></h4>
+      <p class="fw-bolder">J'ai bien pris en compte tes symptômes : "<%= @question.content.capitalize %>"
+      <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag-m text-decoration-none" %></button></p>
+    </div>
+    <hr>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <h3 class="fw-bolder p-4"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
+      </li>
+      <li class="list-inline-item">
+        <p> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
+      </li>
+      <li class="list-inline-item">
+        <%# <div class="flag" data-task-target="result"></div> %>
+        <p>Progression :</p>
+      </li>
+      <li class="list-inline-item">
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" data-task-target="result" style="width: 100%"></div>
+        </div>
+      </li>
+    </ul>
+    <div class="card-wrapper">
+      <div class="slide-content">
+        <div class="widget-list row row-cols-1 row-cols-md-3 g-3" data-task-target="card">
+          <% @answer.tasks.each do |task|%>
+            <div class="shadow card mb-3 widget">
+              <div class="card-header bg-transparent " >
+                <div class="form-check">
+                  <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" >
+                  <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="description"><%= task.content %></p>
+              <div class="card-footer bg-transparent">
+                🏅<span class="" data-task-target="score"></span>
+                <span>%</span>
+              </div>
               </div>
             </div>
-            <div class="card-body">
-              <p class="description"><%= task.content %></p>
-            <div class="d-flex d-inline-flex card-footer bg-transparent">
-              <span class="" data-task-target="score"></span>
-              <span>%</span>
-            </div>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <script>
+      ScrollReveal().reveal('.headline', { duration: 2000 });
+      ScrollReveal().reveal('.widget', { interval: 200 });
+    </script>
   </div>
-</div>
-
-  <script>
-    ScrollReveal().reveal('.headline', { duration: 2000 });
-    ScrollReveal().reveal('.widget', { interval: 200 });
-  </script>
-
 </div>
