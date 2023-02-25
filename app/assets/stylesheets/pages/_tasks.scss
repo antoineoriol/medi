@@ -1,5 +1,5 @@
 /* utility */
-@media (min-width: 576px) {
+@media (min-width: 390px) {
 
   *{
     margin: 0;
@@ -7,11 +7,15 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.shadow-container{
+  border-radius: 25px;
+  background-color: #fff;
+}
 
 .slide-container{
   margin-top: 50px;
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   padding: 40px 0;
 }
 
@@ -61,6 +65,12 @@
 .card-title {
   position: relative;
 }
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .description{
   margin-top: 20px;
@@ -69,62 +79,60 @@
   text-align: center;
 }
 
-// .disabled,
-// .form-check-input:checked.card:hover{
-  //   pointer-events: none;
-  //   opacity: 0.2;
-  //   color: gray;
-  //   cursor: not-allowed;
-  // }
 
-
+  .card-header {
   .form-check .form-check-input {
     float: left;
     margin-left: -4.5em;
   }
 
-  .form-check-input:checked {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: green;
+
+    .form-check-input:checked {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: green;
+    }
+
+    .form-check-input[type="checkbox"] {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+
+    .button{
+      width: 25px;
+      height: 25px;
+      margin-top: 3px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      margin-right: -4.5em;
+    }
   }
 
-  .form-check-input[type="checkbox"] {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-}
+  .progress{
+    width: 200px;
+  }
 
-.button{
-  width: 25px;
-  height: 25px;
-  margin-top: 3px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  margin-right: -4.5em;
-}
+  html.sr .load-hidden {
+    visibility: hidden;
+  }
 
-html.sr .load-hidden {
-  visibility: hidden;
-}
+  .widget-list {
+    display: flex;
+    list-style: none;
+    background: transparent;
+  }
 
-.widget-list {
-  display: flex;
-  list-style: none;
-  background: transparent;
-}
+  .widget {
+    margin: 0.5rem;
+    background: white;
+    text-align: center;
+  }
 
-.widget {
-  margin: 0.5rem;
-  background: white;
-  text-align: center;
-}
-
-/* extension */
-html.sr .widget {
-  visibility: hidden;
-}
-
+  /* extension */
+  html.sr .widget {
+    visibility: hidden;
+  }
 }

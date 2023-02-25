@@ -12,6 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/scrollreveal@4"></script>
+
   </head>
 
   <body>
@@ -19,8 +20,8 @@
     <%= render "shared/flashes" %>
     <%= yield %>
     <script>
-    ScrollReveal().reveal('.headline', { duration: 2000 });
-    ScrollReveal().reveal('.widget', { interval: 200 });
+      ScrollReveal().reveal('.headline', { duration: 2000 });
+      ScrollReveal().reveal('.widget', { interval: 200 });
     </script>
   </body>
 </html>

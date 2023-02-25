@@ -1,15 +1,21 @@
 // Specific CSS for your home-page
-@media (min-width: 576px) {
+@media (min-width: 390px) {
 body {
   font-family: $body-font;
   h1, h4 {
     color: rgb(15, 14, 14) !important;
   }
-  justify-content: center;
-  align-items: center;
-  // background-image: image-url('back.jpg');
+  // justify-content: center;
+  // align-items: center;
+  background-image: image-url('back2.jpg');
   background-attachment: fixed;
   background-size: cover;
+}
+
+.home-bg {
+  background-image: image-url('Trait.png');
+  background-position: 0px 20px;
+  rotate: 90;
 }
 
 .send-button {
@@ -49,9 +55,92 @@ body {
   border-radius: 10px;
 }
 
+.flag-m{
+  background-color: #c6d8f6;
+  font-weight: lighter;
+  font-size: 18px;
+  color: #3b82f6;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
   .form-control {
     width: 400px;
     border-radius: 30px;
     background-color: transparent;
   }
+
+
+
+// Loading
+.lds-heart {
+  color: official;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer horizontalement */
+  position: relative;
+  top: 45%;
+  left: 45%;
+  // transform: translate(-50%, -50%);
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+  width: 90px;
+  height: 90px;
+}
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(blue, rgb(61, 75, 235));
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(rgb(19, 19, 127), rgb(8, 8, 162));
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+
+
+.btn-about {
+  font-family: $body-font;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  padding: 10px 20px;
+}
 }

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :history, only: %i[index]
+  resources :history, only: %i[index destroy]
 
   resources :tasks, only: %i[destroy]
 

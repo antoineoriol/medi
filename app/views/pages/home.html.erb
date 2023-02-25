@@ -1,19 +1,46 @@
+<%# Section %>
 
-<div class="container p-5" id="home">
-  <div class="shadow rounded-4 p-5">
-    <div class="row g-4">
-      <div class="col-md-8">
-        <div class="card-body">
-          <h1 class="card-title">Bienvenue chez Medi 💙</h1>
-          <h4><span data-controller="typed-js"></span></h4>
-          <br>
-          <br>
-          <h4 class="input-question"> Peux-tu me dire tes <span class="flag">symptômes ?</span></h4>
-          <%= render "questions/input", question: @question %>
-        </div>
-        <br>
+<div class="container home-bg d-flex align-items-center justify-content-center vh-100">
+  <div class="row p-5 shadow rounded-4" style="width: 70%; background-color: white;">
+    <div class="col-12">
+      <h1>Bienvenue chez <span class="badge text-bg-primary">Medi 💙</span></h1>
+      <h4><span data-controller="typed-js"></span></h4>
+      <h4 class="input-question mt-5"> Peux-tu me dire tes symptômes ?</h4>
+      <%= render "questions/input", question: @question %>
+    </div>
+  </div>
+</div>
+
+<%# Bouton About %>
+
+<button type="button" class="btn btn-about btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Medi, c'est quoi ?
+</button>
+
+<%# Modal %>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Medi, c'est quoi ?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bienvenue dans l'ère de l'automédication 2.0 ! Avec notre application basée sur l'Intelligence Artificielle, vous pouvez maintenant soigner vos petits bobos sans quitter le confort de votre canapé.
+<br>
+<br>
+Finies les heures passées à chercher sur Google vos symptômes, à essayer de deviner quelle pilule prendre ou à vous inquiéter inutilement. Notre application est là pour vous aider à gérer vos maux et douleurs en quelques clics.
+<br>
+<br>
+Comment ça marche ? Tout d'abord, notre IA utilise des algorithmes sophistiqués pour analyser vos symptômes et établir un diagnostic rapide. Vous pouvez ensuite choisir parmi une sélection de traitements recommandés pour votre condition.
+<br>
+<br>
+Alors pourquoi vous encombrer d'une visite chez le médecin lorsque vous pouvez avoir votre propre infirmier personnel dans votre poche ?
+      <div class="modal-footer">
+        <p>Et si vos symptômes persistent, n'hésitez pas à consulter un vrai médecin. On est quand même pas magiciens...</p>
+      </div>
       </div>
     </div>
   </div>
-  <br>
 </div>

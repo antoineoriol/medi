@@ -20,6 +20,17 @@ export default class extends Controller {
     this.calculate()
   }
 
+  // calculate(){
+  //   let result = 0;
+  //   this.scoreTargets.forEach(score => {
+  //     if (score.closest('.card').querySelector('input').checked) {
+  //       result += parseInt(score.innerText)
+  //     }
+  //   })
+
+  //   this.resultTarget.innerText = `Nombre de points : ${result}%`
+  // }
+
   calculate(){
     let result = 0;
     this.scoreTargets.forEach(score => {
@@ -28,6 +39,13 @@ export default class extends Controller {
       }
     })
 
-    this.resultTarget.innerText = `Nombre de points : ${result}%`
+    let progress = Math.round(result / this.cardsLength * 5)
+    this.resultTarget.innerText = `${progress}%`
+
+    let progressBar = this.targets.find("result")
+    let width = progress + "%"
+    progressBar.setAttribute("aria-valuenow", progress)
+    progressBar.style.width = width
   }
+
 }
