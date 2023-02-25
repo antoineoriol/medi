@@ -1,9 +1,9 @@
-<div class="container-fluid p-4" style='margin-top: 50px;'>
-  <div class="shadow-container">
+<div class="container p-4" style='margin-top: 50px;'>
+  <div class="shadow shadow-container">
     <div class="p-4">
       <h4 class="fw-bolder">Bonjour 👋🏻<span class="flag"><%= current_user.name %></span></h4>
-      <p class="fw-bolder">J'ai bien pris en compte tes symptômes : <%= @question.content.capitalize %>.
-      <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag text-decoration-none" %></button></p>
+      <p class="fw-bolder">J'ai bien pris en compte tes symptômes : "<%= @question.content.capitalize %>"
+      <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag-m text-decoration-none" %></button></p>
     </div>
     <hr>
     <ul class="list-inline">
@@ -18,12 +18,10 @@
       <div class="slide-content">
         <div class="widget-list row row-cols-1 row-cols-md-3 g-3">
           <% @answer.tasks.each do |task|%>
-            <div class="shadow card mb-3 widget"
-              data-disable-card-target="card">
+            <div class="shadow card mb-3 widget">
               <div class="card-header bg-transparent" >
                 <div class="form-check"
-                  data-controller="disable-card task"
-                  data-action="click->disable-card#disable">
+                  data-controller="task">
                   <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" >
 
                   <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
@@ -39,7 +37,7 @@
         </div>
       </div>
     </div>
-      <script>
+    <script>
       ScrollReveal().reveal('.headline', { duration: 2000 });
       ScrollReveal().reveal('.widget', { interval: 200 });
     </script>

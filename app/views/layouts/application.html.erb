@@ -19,6 +19,9 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
-   
+    <script>
+      ScrollReveal().reveal('.headline', { duration: 2000 });
+      ScrollReveal().reveal('.widget', { interval: 200 });
+    </script>
   </body>
 </html>

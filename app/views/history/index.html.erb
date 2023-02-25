@@ -6,7 +6,7 @@
       <h1 class="text-center p-4">Mon historique</h1>
         <ul class="list-group">
           <% @questions.each do |question| %>
-            <li class="list-group-item active border border-4 border-start-0 border-end-0">
+            <li class="list-group-item border border-4 border-start-0 border-end-0">
               <div class="d-flex justify-content-between">
                 <h3>Symptome: <%= question.content %></h3>
                 <p> <%= question.created_at.strftime('%d-%m-%Y') %> </p>

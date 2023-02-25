@@ -4,12 +4,6 @@
 
 import { application } from "./application"
 
-import DeleteTaskController from "./delete_task_controller"
-application.register("delete-task", DeleteTaskController)
-
-import DisableCardController from "./disable_card_controller"
-application.register("disable-card", DisableCardController)
-
 import LoadingController from "./loading_controller"
 application.register("loading", LoadingController)
 

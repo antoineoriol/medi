@@ -3,10 +3,10 @@
 
   <h4 class="input-question"> Peux-tu me dire tes <span class="flag">symptômes ?</span></h4>
   <%= simple_form_for question, data: {action: "submit->loading#loading"} do |f| %>
-    <div>
+    <div class="col-auto">
       <%= f.input :content, label: false, placeholder: "J'ai mal au ventre, courbatures, ..." %>
     </div>
-    <div class="col mt-5">
+    <div class="col-auto">
       <%= f.submit "Rechercher", class: "send-button" %>
     </div>
     <% end %>
