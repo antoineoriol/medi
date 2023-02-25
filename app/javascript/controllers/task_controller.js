@@ -6,9 +6,11 @@ export default class extends Controller {
 
   static targets = [ "card", "score", "result" ]
 
-  connect(){
+  connect() {
     this.cardsLength = this.cardTarget.children.length
+    console.log("coucou")
     const score = Math.round((100 / this.cardsLength)*100) / 100
+    console.log(this.cardsLength)
     this.scoreTargets.forEach((scoreTarget) => {
       scoreTarget.innerText = score
     })
@@ -38,8 +40,8 @@ export default class extends Controller {
         result += parseInt(score.innerText)
       }
     })
-
-    let progress = Math.round(result / this.cardsLength * 5)
+    console.log(result)
+    let progress = Math.ceil(result)
     this.resultTarget.innerText = `${progress}%`
 
     let progressBar = this.targets.find("result")
