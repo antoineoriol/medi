@@ -6,7 +6,8 @@
       <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag text-decoration-none" %></button></p>
     </div>
     <hr class="border border-5">
-    <ul class="list-inline d-flex justify-content-around">
+    <div class="p-4">
+    <ul class="list-inline grid gap-0 column-gap-4">
       <li class="list-inline-item">
         <h3 class="fw-bolder"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
       </li>
@@ -22,19 +23,20 @@
         </div>
       </li>
     </ul>
-    <div class="card-wrapper p-4">
-      <div class="slide-content">
-        <div class="widget-list row row-cols-1 row-cols-md-3 g-3" data-task-target="card">
+    </div>
+    <div class="card-wrapper">
+      <div class="slide-content p-4">
+        <div class="widget-list row" data-task-target="card">
           <% @answer.tasks.each do |task|%>
             <div class="shadow card mb-3 widget">
               <div class="card-header bg-transparent " >
                 <div class="form-check">
-                  <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch" id="disableCard-<%= task.id %>" data-url="<%= question_answer_task_path(@question, @answer, task) %>" <%= "checked" if task.status  %> >
+                  <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch"  data-url="<%= question_answer_task_path(@question, @answer, task) %>" <%= "checked" if task.status  %> >
                   <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
                 </div>
               </div>
               <div class="card-body">
-                <p class="description"><%= task.content %></p>
+                <p class="description p-2"><%= task.content %></p>
               <div class="card-footer bg-transparent">
                 🏅<span class="" data-task-target="score"></span>
                 <span>%</span>

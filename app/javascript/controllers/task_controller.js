@@ -22,17 +22,6 @@ export default class extends Controller {
     this.calculate()
   }
 
-  // calculate(){
-  //   let result = 0;
-  //   this.scoreTargets.forEach(score => {
-  //     if (score.closest('.card').querySelector('input').checked) {
-  //       result += parseInt(score.innerText)
-  //     }
-  //   })
-
-  //   this.resultTarget.innerText = `Nombre de points : ${result}%`
-  // }
-
   calculate(){
     let result = 0;
     this.scoreTargets.forEach(score => {
