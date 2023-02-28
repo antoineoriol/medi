@@ -7,8 +7,8 @@ body {
   }
   background-image: image-url('bg-medi.001.png');
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0px -19px;
+  background-attachment: fixed;
+  // background-position: 0px -19px;
 }
 
 // .home-bg {
@@ -94,7 +94,7 @@ body {
   justify-content: center; /* Centrer horizontalement */
   position: relative;
   top: 45%;
-  left: 20%;
+  left: 45%;
   // transform: translate(-50%, -50%);
   transform: rotate(45deg);
   transform-origin: 40px 40px;
@@ -155,4 +155,13 @@ body {
   left: 50px;
   padding: 10px 20px;
 }
+}
+
+.souffle{
+  color: official;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 45%;
+  left: 10%;
 }
