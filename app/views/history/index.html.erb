@@ -1,4 +1,3 @@
-
 <div class="container p-5" style="margin-top: 80px;">
   <div class="shadow shadow-container bg-opacity-75 rounded-4">
     <div class="tab-pane">
@@ -6,23 +5,18 @@
       <ul class="list-inline p-4">
         <% @questions.order(created_at: :desc).each do |question| %>
           <div class="border border-start-0 border-end-0 border-5 d-flex justify-content-between p-2">
-            <h2>Symptome: <%= question.content %></h2>
+            <h3>Symptome: <%= question.content %></h3>
             <% if question&.answer %>
-              <div class="d-flex justify-content-center">
-                <p> <%= image_tag 'pdf.png', class:"icon-pdf" %>
-                <%= link_to "Télécharger ma fiche", question_answer_tasks_path(question, question.answer, format: :pdf), target: :_blank, class: "text-decoration-none" %>
-                </p>
+              <div class="d-flex justify-content-between">
+                <div><%= image_tag 'pdf.png', class:"icon-pdf" %></div>
+                <div><%= link_to "Télécharger ma fiche", question_answer_tasks_path(question, question.answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></div>
+                <div class="m-left-3"><%= question.created_at.strftime('%d-%b-%Y - %Hh%M') %></div>
               </div>
-              <li class="list-group-item list-group-item-secondary">
-                <% question.answer&.tasks&.each do |task|  %>
-                  <p><%= task.content %></p>
-                <% end %>
-                <p class="text-center mt-5  d-flex justify-content-end"> <%= image_tag 'pdf.png', class:"icon-pdf" %>
-                  <% if question&.answer %>
-                    <%= link_to "Télécharger ma fiche", question_answer_tasks_path(question, question.answer, format: :pdf), target: :_blank, class: "text-decoration-none" %>
-                  <% end %>
-                </p>
-              </li>
+            <% end %>
+          </div>
+          <div class="p-2">
+            <% question.answer&.tasks&.each do |task|  %>
+              <p><%= task.content %></p>
             <% end %>
           </div>
         <% end %>
