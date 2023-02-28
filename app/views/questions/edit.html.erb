@@ -1,13 +1,13 @@
-<div class="container p-4" style='margin-top: 50px;'>
-  <div class="shadow shadow-container p-4">
+<div class="container d-flex align-items-center justify-content-center p-4" style='margin-top: 200px;'>
+  <div class="col-6 shadow shadow-container p-4" >
   <h1 class="fw-bold">Éditer ma question</h1>
-    <div class="row">
+    <div class="">
       <%= simple_form_for @question do |f| %>
         <div class="col-md-auto fst-italic">
-          <%= f.input :content, label: 'Saisir votre question :' %>
+          <%= f.input :content, required: false, label: 'Saisir votre question :' %>
         </div>
         <div class="col mt-5">
-          <%= f.submit "Éditer une question", class: "btn btn-primary" %>
+          <%= f.submit "Rechercher", class: "send-button" %>
         </div>
         <% end %>
     </div>

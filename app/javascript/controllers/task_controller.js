@@ -6,7 +6,7 @@ export default class extends Controller {
 
   static targets = [ "card", "score", "result" ]
 
-  connect(){
+  connect() {
     this.cardsLength = this.cardTarget.children.length
     const score = Math.round((100 / this.cardsLength)*100) / 100
     this.scoreTargets.forEach((scoreTarget) => {
@@ -20,26 +20,23 @@ export default class extends Controller {
     this.calculate()
   }
 
-  // calculate(){
-  //   let result = 0;
-  //   this.scoreTargets.forEach(score => {
-  //     if (score.closest('.card').querySelector('input').checked) {
-  //       result += parseInt(score.innerText)
-  //     }
-  //   })
-
-  //   this.resultTarget.innerText = `Nombre de points : ${result}%`
-  // }
-
   calculate(){
+    let count = 0;
     let result = 0;
     this.scoreTargets.forEach(score => {
       if (score.closest('.card').querySelector('input').checked) {
-        result += parseInt(score.innerText)
+        result += parseInt(score.innerHTML)
+        count += 1
       }
     })
 
-    let progress = Math.round(result / this.cardsLength * 5)
+    let progress = 0;
+    if (this.scoreTargets.length === count) {
+      progress = 100
+    } else {
+      progress = Math.ceil(result)
+    }
+
     this.resultTarget.innerText = `${progress}%`
 
     let progressBar = this.targets.find("result")
@@ -47,5 +44,4 @@ export default class extends Controller {
     progressBar.setAttribute("aria-valuenow", progress)
     progressBar.style.width = width
   }
-
 }
