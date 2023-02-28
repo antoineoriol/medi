@@ -38,9 +38,9 @@ class QuestionsController < ApplicationController
     response = client.completions(
       parameters: {
         model: "text-davinci-003",
-        prompt: "#{@question.content}, renvoie moi sous forme de listes 5 meilleures solutions d'automédication",
+        prompt: "Renvoie moi uniquement sous forme de listes les 5 meilleures solutions simple d'automédication autre qu'avec des médicaments pour soigner ces symptômes : #{@question.content}.",
         max_tokens: 300,
-        temperature: 0.9
+        temperature: 0.5,
       }
     )
     response['choices']&.first&.dig('text')
