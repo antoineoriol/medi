@@ -8,9 +8,7 @@ export default class extends Controller {
 
   connect() {
     this.cardsLength = this.cardTarget.children.length
-    console.log("coucou")
     const score = Math.round((100 / this.cardsLength)*100) / 100
-    console.log(this.cardsLength)
     this.scoreTargets.forEach((scoreTarget) => {
       scoreTarget.innerText = score
     })
@@ -23,14 +21,22 @@ export default class extends Controller {
   }
 
   calculate(){
+    let count = 0;
     let result = 0;
     this.scoreTargets.forEach(score => {
       if (score.closest('.card').querySelector('input').checked) {
-        result += parseInt(score.innerText)
+        result += parseInt(score.innerHTML)
+        count += 1
       }
     })
-    console.log(result)
-    let progress = Math.ceil(result)
+
+    let progress = 0;
+    if (this.scoreTargets.length === count) {
+      progress = 100
+    } else {
+      progress = Math.ceil(result)
+    }
+
     this.resultTarget.innerText = `${progress}%`
 
     let progressBar = this.targets.find("result")
@@ -38,5 +44,4 @@ export default class extends Controller {
     progressBar.setAttribute("aria-valuenow", progress)
     progressBar.style.width = width
   }
-
 }
