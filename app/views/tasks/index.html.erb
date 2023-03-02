@@ -32,7 +32,7 @@
               <div class="card-header bg-transparent " >
                 <div class="form-check">
                   <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch"  data-url="<%= question_answer_task_path(@question, @answer, task) %>" <%= "checked" if task.status  %> >
-                  <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
+                  <%= button_to '✖️', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
                 </div>
               </div>
               <div class="card-body">
