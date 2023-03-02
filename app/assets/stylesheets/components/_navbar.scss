@@ -15,4 +15,30 @@
 
 .dropdown-menu{
   background: transparent;
+  font-size: larger;
+}
+
+.menu img {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.menu .overlay {
+  opacity: 0;
+}
+
+.menu:hover img:first-child {
+  opacity: 0;
+}
+.menu:hover .overlay {
+  opacity: 1;
 }
