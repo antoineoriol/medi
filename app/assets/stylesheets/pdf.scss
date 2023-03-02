@@ -53,7 +53,8 @@ h1 {
   display: -webkit-box;
   justify-content: flex-start;
   gap: 1rem;
-  width: 50%;
+  width: 70%;
+  flex-wrap: nowrap;
 }
 
 .symptom-tag {
