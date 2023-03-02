@@ -1,6 +1,6 @@
 <div class="container input-question d-flex align-items-center justify-content-center vh-100">
   <div class="shadow shadow-container p-4" data-controller="loading">
-  <h1 class="fw-bold">Éditer ma question</h1>
+  <h1 class="fw-bold">As-tu d’autres symptomes ?</h1>
   <%= simple_form_for @question, data: {action: "submit->loading#loading"} do |f| %>
     <div class="col-auto pt-2">
       <%= f.input :content, label: false, input_html: { class: 'input-space enhanceai' }, placeholder: "J'ai mal au ventre, courbatures, ..." %>
