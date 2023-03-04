@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
         model: "text-davinci-003",
         prompt: "Renvoie moi uniquement sous forme de listes les 5 meilleures solutions simple d'automédication autre qu'avec des médicaments pour soigner ces symptômes : #{@question.content}.",
         max_tokens: 300,
-        temperature: 0.5,
+        temperature: 0.7,
       }
     )
     response['choices']&.first&.dig('text')
