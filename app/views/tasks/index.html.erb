@@ -7,22 +7,22 @@
     </div>
     <hr class="border border-5">
     <div class="p-4">
-    <ul class="list-inline grid gap-0 column-gap-4">
-      <li class="list-inline-item">
-        <h3 class="fw-bolder"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
-      </li>
-      <li class="list-inline-item">
-        <p> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
-      </li>
-      <li class="list-inline-item">
-        <p class="flag-m">Progression :</p>
-      </li>
-      <li class="list-inline-item">
-        <div class="progress rounded-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped progress-bar-animated rounded-4" data-task-target="result" style="width: 100%"></div>
-        </div>
-      </li>
-    </ul>
+      <ul class="list-inline grid gap-0 column-gap-4">
+        <li class="list-inline-item">
+          <h3 class="fw-bolder"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
+        </li>
+        <li class="list-inline-item">
+          <p> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
+        </li>
+        <li class="list-inline-item">
+          <p class="flag-m">Progression :</p>
+        </li>
+        <li class="list-inline-item">
+          <div class="progress rounded-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-4" data-task-target="result" style="width: 100%"></div>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="card-wrapper">
       <div class="slide-content p-4">
