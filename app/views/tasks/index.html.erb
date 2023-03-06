@@ -1,28 +1,32 @@
 <div class="container home-bg d-flex align-items-center justify-content-center vh-100" data-controller="task">
   <div class="shadow shadow-container">
     <div class="p-4">
-      <h4 class="fw-bolder">Bonjour <span class="flag"><%= current_user.name %></span> 👋🏻</h4>
-      <p class="fw-bolder">J'ai bien pris en compte tes symptômes : "<%= @question.content.capitalize %>"
-      <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag text-decoration-none" %></button></p>
+      <div class="d-flex justify-content-between">
+        <h4 class="fw-bolder">Bonjour <span class="flag"><%= current_user.name %></span> 👋🏻</h4>
+        <p> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
+      </div>
+      <div class="d-flex gap-3"><p class="">J'ai bien pris en compte tes symptômes : </p> <div class="fw-bolder"> "<%= @question.content.capitalize %>"</div></div>
+      <button class="border border-0 mt-3"><%= link_to "Modifier", edit_question_path(@question), class: "flag-m text-decoration-none" %></button></p>
     </div>
     <hr class="border border-5">
     <div class="p-4">
-      <ul class="list-inline grid gap-0 column-gap-4">
-        <li class="list-inline-item">
-          <h3 class="fw-bolder"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
-        </li>
-        <li class="list-inline-item">
-          <p> <%= image_tag 'pdf.png', class:"icon-pdf" %> <%= link_to "Télécharger ma fiche", question_answer_tasks_path(@question, @answer, format: :pdf), target: :_blank, class: "text-decoration-none" %></p>
-        </li>
-        <li class="list-inline-item">
-          <p class="flag-m">Progression :</p>
-        </li>
-        <li class="list-inline-item">
-          <div class="progress rounded-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar progress-bar-striped progress-bar-animated rounded-4" data-task-target="result" style="width: 100%"></div>
-          </div>
-        </li>
-      </ul>
+    <ul class="list-inline grid gap-0 column-gap-4">
+      <li class="list-inline-item">
+        <h3 class="fw-bolder"><%= "Les #{@answer.tasks.length} conseils de Medi" %></h3>
+      </li>
+      <li class="list-inline-item">
+      </li>
+      <li class="list-inline-item">
+      </li>
+      <div class="d-flex">
+        <div class="col-2">
+          <h5 class="">💙 Progression</h5>
+        </div>
+        <div class="progress rounded-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated rounded-4" data-task-target="result" style="width: 100%"></div>
+        </div>
+      </div>
+    </ul>
     </div>
     <div class="card-wrapper">
       <div class="slide-content p-4">
@@ -32,13 +36,13 @@
               <div class="card-header bg-transparent " >
                 <div class="form-check">
                   <input data-action="click->task#update" class="form-check-input" type="checkbox" role="switch"  data-url="<%= question_answer_task_path(@question, @answer, task) %>" <%= "checked" if task.status  %> >
-                  <%= button_to '❌', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
+                  <%= button_to'╳', task_path(task), method: :delete, data: {turbo_method: :delete}, class:"button" %>
                 </div>
               </div>
               <div class="card-body">
                 <p class="description p-2"><%= task.content %></p>
               <div class="card-footer bg-transparent">
-                🏅<span class="" data-task-target="score"></span>
+                💙 +<span class="" data-task-target="score"></span>
                 <span>%</span>
               </div>
               </div>

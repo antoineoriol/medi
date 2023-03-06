@@ -58,8 +58,7 @@ class QuestionsController < ApplicationController
             content: "Renvoie moi uniquement sous forme de listes les 5 meilleures solutions simple d'automédication autre qu'avec des médicaments pour soigner ces symptômes : #{@question.content}.!"
           }
         ]
-      }
-    )
+      })
     response.dig("choices", 0, "message", "content")
   end
 
