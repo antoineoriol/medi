@@ -1,36 +1,39 @@
 /* utility */
 @media (min-width: 390px) {
 
-  *{
-    margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+//   *{
+//     margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: Verdana, Geneva, Tahoma, sans-serif;
+// }
+
 .shadow-container{
   border-radius: 25px;
   background-color: #fff;
+  margin-bottom: 50px;
 }
 
 .slide-container{
   margin-top: 50px;
+  margin-bottom: 80px;
   background-color: white;
 }
-
 .card-wrapper{
   display: flex;
   justify-content: center;
-  // padding-top: 20px;
-  // column-gap: 8px;
 }
 
 .slide-content{
-  // margin: 0 40px;
+  margin: 0 70px;
 }
 
 .icon-pdf{
   width: 30px;
 }
+}
+
+
 .card {
   width: 190px;
   border-radius: 25px;
@@ -84,7 +87,6 @@
     margin-left: -4.5em;
   }
 
-
     .form-check-input:checked {
       width: 25px;
       height: 25px;
@@ -131,4 +133,3 @@
   html.sr .widget {
     visibility: hidden;
   }
-}
